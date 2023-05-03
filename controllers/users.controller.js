@@ -18,7 +18,18 @@ module.exports.saveUser = (req, res) => {
   });
 };
 
-module.exports.updateUser = (req, res) => {};
+module.exports.updateUser = (req, res) => {
+  const { id } = req.params;
+  const data = req.body;
+
+  const updatedDoc = users.find((user) => user.id === Number(id));
+  updatedDoc.contact = data.contact;
+
+  res.status(200).json({
+    message: "user updated",
+    data: updatedDoc,
+  });
+};
 
 module.exports.deleteUser = (req, res) => {
   const { id } = req.params;
