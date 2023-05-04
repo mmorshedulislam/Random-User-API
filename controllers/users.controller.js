@@ -47,4 +47,13 @@ module.exports.deleteUser = (req, res) => {
   });
 };
 
-module.exports.updateMultUser = (req, res) => {};
+module.exports.updateMultUser = (req, res) => {
+  const updateUsers = req.body;
+
+  const selectedUser = updateUsers
+    .filter((obj1) => users.some((obj2) => obj1.id === obj2.id))
+    .map((user) => {
+      return { ...user, contact: user.contact };
+    });
+  res.send(selectedUser);
+};
