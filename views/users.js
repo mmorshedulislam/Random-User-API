@@ -1,13 +1,5 @@
 let users = [
   {
-    id: 0,
-    gender: "male",
-    name: "Rifat",
-    contact: 15464846,
-    address: "Chittagong",
-    photoUrl: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
-  },
-  {
     id: 1,
     gender: "male",
     name: "Morshed",
@@ -85,6 +77,14 @@ let users = [
     name: "Julia",
     contact: 15464846,
     address: "Dhaka",
+    photoUrl: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+  },
+  {
+    id: 11,
+    gender: "male",
+    name: "Rifat",
+    contact: 15464846,
+    address: "Chittagong",
     photoUrl: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
   },
 ];

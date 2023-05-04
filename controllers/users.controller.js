@@ -1,7 +1,7 @@
 let users = require("../views/users");
 
 module.exports.getRandomUser = (req, res) => {
-  const random = Math.floor(Math.random() * 10);
+  const random = Math.ceil(Math.random() * 10);
   const user = users.find((user) => user.id == random);
   res.send({
     message: "success",
@@ -10,9 +10,11 @@ module.exports.getRandomUser = (req, res) => {
 };
 
 module.exports.getUsers = (req, res) => {
+  const { limit } = req.query;
   res.status(200).json({
     message: "success",
-    data: users,
+    length: limit,
+    data: users.slice(0, limit),
   });
 };
 
